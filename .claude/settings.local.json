@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.specify/scripts/bash/create-phr.sh:*)",
+      "SlashCommand(/sp.tasks)",
+      "Bash(.specify/scripts/bash/check-prerequisites.sh:*)",
+      "Bash(git rev-parse:*)",
+      "Bash(uv run python:*)",
+      "Bash(python3 -c \"import sys; sys.path.insert(0, ''.''); from src.cli.main import cli; cli([''add'', ''Test task''])\")",
+      "Bash(uv pip install:*)",
+      "Bash(uv run:*)",
+      "Bash(uv sync:*)",
+      "Bash(cat:*)",
+      "Bash(UV_PYTHON=/usr/bin/python3.12 uv run:*)",
+      "Bash(tree:*)"
+    ]
+  }
+}
