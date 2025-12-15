@@ -12,7 +12,8 @@
       "Bash(uv sync:*)",
       "Bash(cat:*)",
       "Bash(UV_PYTHON=/usr/bin/python3.12 uv run:*)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "Bash(wc:*)"
     ]
   }
 }

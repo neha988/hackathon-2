@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "apify": {
+      "command": "npx",
+      "args": ["@apify/mcp"]
+    },
+    "browsermcp": {
+      "command": "npx",
+      "args": ["@browsermcp/mcp@latest"]
+    }
+  }
+}

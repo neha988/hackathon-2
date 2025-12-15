@@ -1,6 +1,12 @@
-# Claude Code Rules
+# Claude Code Rules - Todo App Monorepo
 
-This file is generated during init for the selected agent.
+This file provides root-level instructions for the Todo App project spanning multiple phases.
+
+## Project Overview
+
+This is a **monorepo** for the Todo App hackathon project that evolves from Phase I (console app) to Phase V (cloud-native deployment).
+
+**Current Phase**: Phase II - Full-Stack Web Application
 
 You are an expert AI assistant specializing in Spec-Driven Development (SDD). Your primary goal is to work with the architext to build products.
 
@@ -196,9 +202,78 @@ If ALL true, suggest:
 
 Wait for consent; never auto-create ADRs. Group related decisions (stacks, authentication, deployment) into one ADR when appropriate.
 
+## Monorepo Structure (Phase II+)
+
+This project uses a **monorepo architecture** with clear separation between frontend, backend, and legacy Phase I code:
+
+```
+hacathon2/
+├── .specify/                     # Spec-Kit Plus configuration
+│   ├── memory/constitution.md    # Project principles (all phases)
+│   ├── templates/                # Spec templates (spec, plan, tasks, ADR, PHR)
+│   └── scripts/                  # Automation scripts
+├── specs/                        # All specifications
+│   ├── 001-todo-app/             # Phase I specifications
+│   └── phase-2/                  # Phase II specifications
+│       ├── architecture.md
+│       ├── features/
+│       ├── api/
+│       ├── database/
+│       └── ui/
+├── frontend/                     # Next.js 16+ App Router
+│   ├── CLAUDE.md                 # Frontend-specific instructions
+│   ├── app/                      # Next.js App Router pages
+│   ├── components/               # React components
+│   ├── lib/                      # API client, auth, utils
+│   ├── types/                    # TypeScript definitions
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── .env.local.example
+├── backend/                      # FastAPI Python backend
+│   ├── CLAUDE.md                 # Backend-specific instructions
+│   ├── app/
+│   │   ├── main.py               # FastAPI entry point
+│   │   ├── db.py                 # Database connection
+│   │   ├── models/               # SQLModel ORM models
+│   │   ├── routes/               # API endpoints
+│   │   ├── services/             # Business logic
+│   │   ├── middleware/           # JWT auth middleware
+│   │   └── schemas/              # Pydantic schemas
+│   ├── tests/                    # Backend tests
+│   ├── pyproject.toml
+│   └── .env.example
+├── src/                          # Phase I console app (legacy, preserved)
+│   ├── cli/
+│   ├── models/
+│   ├── services/
+│   ├── storage/
+│   └── utils/
+├── tests/                        # Phase I tests (legacy)
+├── history/
+│   ├── prompts/                  # Prompt History Records
+│   └── adr/                      # Architecture Decision Records
+├── CLAUDE.md                     # This file (root instructions)
+├── README.md                     # Project documentation
+└── docker-compose.yml            # Multi-service orchestration (future)
+```
+
+## Navigation Guidelines
+
+**When working on Phase II:**
+
+- **Frontend tasks**: Read `frontend/CLAUDE.md` for Next.js/TypeScript patterns
+- **Backend tasks**: Read `backend/CLAUDE.md` for FastAPI/SQLModel patterns
+- **Cross-cutting changes**: Use this root CLAUDE.md for monorepo coordination
+- **Specifications**: Reference `specs/phase-2/` for Phase II requirements
+
+**Phase I Code (src/ directory):**
+- Preserved as reference only
+- Do NOT delete or modify Phase I code
+- Can reference Phase I models/services for reuse patterns
+
 ## Basic Project Structure
 
-- `.specify/memory/constitution.md` — Project principles
+- `.specify/memory/constitution.md` — Project principles (Phases I & II)
 - `specs/<feature>/spec.md` — Feature requirements
 - `specs/<feature>/plan.md` — Architecture decisions
 - `specs/<feature>/tasks.md` — Testable tasks with cases
